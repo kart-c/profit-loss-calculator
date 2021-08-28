@@ -8,8 +8,11 @@ function calculate() {
 	output.innerText = '';
 	if (
 		initialPriceInput.value !== '' &&
+		Math.sign(initialPriceInput.value) !== -1 &&
 		stockQtyInput.value !== '' &&
-		currentPriceInput.value !== ''
+		Math.sign(stockQtyInput.value) !== -1 &&
+		currentPriceInput.value !== '' &&
+		Math.sign(currentPriceInput.value) !== -1
 	) {
 		initialPrice = Number(initialPriceInput.value);
 		stockQty = Number(stockQtyInput.value);
