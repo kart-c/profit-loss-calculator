@@ -17,10 +17,10 @@ function calculate() {
 		initialPrice = Number(initialPriceInput.value);
 		stockQty = Number(stockQtyInput.value);
 		currentPrice = Number(currentPriceInput.value);
-		const stockReturn = Math.abs((currentPrice - initialPrice) * stockQty);
-		const percentReturn = Math.abs((stockReturn / initialPrice) * 100).toFixed(2);
+		const stockReturn = Math.abs(currentPrice - initialPrice) * stockQty;
+		const percentReturn = ((stockReturn / (initialPrice * stockQty)) * 100).toFixed(2);
 		if (initialPrice > currentPrice) {
-			output.innerText = `Sorry you suffered a loss of ${stockReturn} and the percent is -${percentReturn} %`;
+			output.innerText = `Sorry you suffered a loss of ${stockReturn} and the loss percentage is ${percentReturn} %`;
 		} else if (initialPrice === currentPrice) {
 			output.innerText = `Congrats! You broke even`;
 		} else {
