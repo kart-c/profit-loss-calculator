@@ -20,10 +20,13 @@ function calculate() {
 		const stockReturn = Math.abs(currentPrice - initialPrice) * stockQty;
 		const percentReturn = ((stockReturn / (initialPrice * stockQty)) * 100).toFixed(2);
 		if (initialPrice > currentPrice) {
+			output.style.color = 'red';
 			output.innerText = `Sorry you suffered a loss of ${stockReturn} and the loss percentage is ${percentReturn} %`;
 		} else if (initialPrice === currentPrice) {
+			output.style.color = 'black';
 			output.innerText = `Congrats! You broke even`;
 		} else {
+			output.style.color = 'green';
 			output.innerText = `Hey, your profit is ${stockReturn} and the percent is ${percentReturn} %`;
 		}
 	} else {
